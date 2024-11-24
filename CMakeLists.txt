@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.25.0 FATAL_ERROR)
+
+set(PROJECT SecureXPC)
+project(${PROJECT} LANGUAGES Swift)
+
+set(CMAKE_Swift_LANGUAGE_VERSION "5")
+set(CMAKE_OSX_DEPLOYMENT_TARGET "10.10" CACHE STRING "" FORCE)
+
+file(GLOB_RECURSE SWIFT_SRC ${CMAKE_CURRENT_LIST_DIR}/Sources/SecureXPC/**.swift)
+
+add_library(${PROJECT} STATIC ${SWIFT_SRC})
